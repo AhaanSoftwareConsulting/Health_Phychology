@@ -1,0 +1,1399 @@
+/* -----------------------------------
+   GLOBAL STYLES  
+----------------------------------- */
+/* ADDED: This reset prevents horizontal overflow caused by padding or borders,
+   without altering the design or position of elements. */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Poppins", sans-serif;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+    /* Existing fix to hide scrollbar */
+}
+
+.bg {
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.container {
+    max-width: 1200px;
+}
+
+/* -----------------------------------
+   HEADER
+----------------------------------- */
+.main-header {
+    padding: 25px 0;
+}
+
+/* Desktop Menu */
+.nav-menu a {
+    font-size: 18px;
+    font-weight: 500;
+    color: #000000;
+    margin-left: 18px;
+    transition: 0.3s;
+    text-decoration: none;
+}
+
+.nav-menu a:hover,
+.nav-menu a.active {
+    color: #F78828;
+}
+
+/* Mobile Menu Button */
+.menu-btn {
+    border: none;
+    background: transparent;
+    padding: 8px;
+}
+
+.menu-btn .navbar-toggler-icon {
+    width: 30px;
+    height: 30px;
+    background-size: contain;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='30' height='30' viewBox='0 0 30 30'%3E%3Cpath stroke='rgba(0,0,0,1)' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
+}
+
+/* Offcanvas Menu Title */
+.offcanvas-title {
+    font-weight: 600;
+    font-size: 22px;
+}
+
+/* Offcanvas Menu Links */
+.mobile-link {
+    display: block;
+    font-size: 18px;
+    font-weight: 500;
+    color: #000000;
+    padding: 12px 0;
+    border-bottom: 1px solid #e7e7e7;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+.mobile-link:hover,
+.mobile-link.active {
+    color: #F78828;
+}
+
+/* -----------------------------------
+   BANNER SECTION
+----------------------------------- */
+.banner-section {
+    padding-top: 70px;
+    padding-bottom: 50px;
+}
+
+.banner-left h1 {
+    text-transform: uppercase;
+    line-height: 1;
+    margin-bottom: 5px;
+}
+
+/* -----------------------------------
+   BANNER HEADINGS
+----------------------------------- */
+.bhv-title {
+    font-size: 80px;
+    font-weight: 700;
+    color: #0A1B33;
+}
+
+.science-title {
+    font-size: 73px;
+    font-weight: 700;
+    color: #FA8120;
+    font-style: italic;
+}
+
+.cons-title {
+    font-size: 53px;
+    font-weight: 600;
+    color: #0A1B33;
+}
+
+/* -----------------------------------
+   SUB TEXT
+----------------------------------- */
+.sub-text {
+    font-size: 22px;
+    font-weight: 500;
+    color: #3B3B3B;
+    margin-top: 20px;
+    max-width: 550px;
+    line-height: 1.5;
+}
+
+/* -----------------------------------
+   BUTTON
+----------------------------------- */
+.learn-btn {
+    margin-top: 25px;
+    background: #0A1B33;
+    color: #FFFFFF;
+    border-radius: 50px;
+    padding: 14px 20px;
+    border: 2px solid #0A1B33;
+    text-transform: uppercase;
+    font-family: "Montserrat", sans-serif;
+    font-size: 16px;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    transition: 0.3s ease;
+}
+
+.learn-btn:hover {
+    background: transparent;
+    color: #0A1B33;
+    border-color: #0A1B33;
+}
+
+/* -----------------------------------
+   FLOATING IMAGE
+----------------------------------- */
+.floating-img {
+    width: 100%;
+    max-width: 550px;
+    animation: floatAnim 4s ease-in-out infinite;
+}
+
+@keyframes floatAnim {
+    0% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-12px);
+    }
+
+    100% {
+        transform: translateY(0);
+    }
+}
+
+/* Section Spacing */
+.clients-section {
+    padding-top: 80px;
+    padding-bottom: 180px;
+}
+
+/* Heading Styling */
+.clients-heading {
+    font-family: "Poppins", sans-serif;
+    font-weight: 700;
+    font-size: 44px;
+    text-transform: uppercase;
+    margin-bottom: 40px;
+}
+
+.clients-heading .highlight-text {
+    color: #FA8120;
+    font-style: italic;
+}
+
+.clients-heading .normal-text {
+    color: #0A1B33;
+    margin-left: 10px;
+}
+
+/* Clients Logos Grid */
+.clients-logos {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+}
+
+/* Single Box Styling */
+.client-box {
+    width: 170px;
+    height: 150px;
+    background: #FFF7EC;
+    border: 2px solid #0A1B33;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+
+    /* Smooth animation */
+    transition: all 0.3s ease;
+
+    /* Fade-in animation */
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeUp 0.7s forwards;
+}
+
+/* Delay each card for staggered animation */
+.client-box:nth-child(1) {
+    animation-delay: 0.1s;
+}
+
+.client-box:nth-child(2) {
+    animation-delay: 0.2s;
+}
+
+.client-box:nth-child(3) {
+    animation-delay: 0.3s;
+}
+
+.client-box:nth-child(4) {
+    animation-delay: 0.4s;
+}
+
+.client-box:nth-child(5) {
+    animation-delay: 0.5s;
+}
+
+.client-box:nth-child(6) {
+    animation-delay: 0.6s;
+}
+
+/* Hover Effect */
+.client-box:hover {
+    transform: translateY(-6px);
+    border-color: #FA8120;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.08);
+}
+
+/* Logo inside box */
+.client-box img {
+    /* max-width: 100px; */
+    max-height: 100px;
+    object-fit: contain;
+
+    transition: 0.3s ease;
+}
+
+/* Slight image scale on hover */
+.client-box:hover img {
+    transform: scale(1.07);
+}
+
+/* Keyframes for fade-up */
+@keyframes fadeUp {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Section Background */
+
+.testimonial-section {
+    background: #FFF7EC;
+    padding: 100px 0;
+}
+
+/* Heading */
+.testimonial-heading {
+    text-transform: uppercase;
+    font-family: 'Poppins', sans-serif;
+    font-size: 44px;
+    font-weight: 700;
+    margin-bottom: 120px;
+    color: #0A1B33;
+}
+
+.testimonial-heading .orange {
+    color: #FA8120;
+}
+
+/* Testimonial Card */
+.testimonial-card {
+    position: relative;
+    background-image: url('./images/Mask\ group\ \(22\).png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    padding: 20px 40px 50px;
+    margin-bottom: 100px;
+    border-radius: 8px;
+
+    /* Animation setup */
+    transition: all 0.35s ease;
+    transform: translateY(0);
+    opacity: 1;
+}
+
+/* On Hover */
+.testimonial-card:hover {
+    transform: translateY(-12px);
+    opacity: 0.95;
+    /* box-shadow: 0px 15px 35px rgba(0, 0, 0, 0.25); */
+}
+
+/* Quote Icon */
+.quote-icon {
+    position: absolute;
+    top: -25px;
+    left: 35px;
+    width: 65px;
+}
+
+/* Client Image */
+.client-img {
+    position: absolute;
+    top: -35px;
+    right: 30px;
+    width: 90px;
+    height: 90px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+/* Card Contents */
+.content-wrapper {
+    margin-top: 10px;
+    padding-bottom: 15px;
+}
+
+/* Stars */
+.stars {
+    font-size: 18px;
+    color: #d59c37;
+    margin-bottom: 12px;
+}
+
+/* Review Text */
+.review-text {
+    font-family: 'Inter', sans-serif;
+    font-size: 14px;
+    font-weight: 400;
+    color: #EEEEEEB2;
+    line-height: 22px;
+    margin-bottom: 15px;
+}
+
+/* Name */
+.client-name {
+    font-family: 'Inter', sans-serif;
+    font-size: 14px;
+    font-weight: 400;
+    color: #EEEEEE;
+    margin-bottom: 0;
+}
+
+/* Role */
+.client-role {
+    font-family: 'Inter', sans-serif;
+    font-size: 14px;
+    font-weight: 400;
+    color: #FA8120;
+}
+
+/* INNER SECTION (NOT FULL WIDTH) */
+.talk-inner-section {
+    /* padding-top: 40px; */
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 4 !important;
+    width: 100%;
+    max-width: 1200px;
+    /* optional, based on your layout */
+    margin-top: -130px;
+}
+
+.talk-inner-container {
+    background: #FA8120;
+    padding: 70px 60px 30px 60px;
+    /* padding-bottom: 0px; */
+
+}
+
+/* HEADING */
+.talk-heading {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 700;
+    font-size: 49px;
+    line-height: 1.2;
+    color: #0A1B33;
+    text-transform: uppercase;
+    margin-bottom: 30px;
+}
+
+.talk-heading span {
+    color: #FFFFFF;
+}
+
+/* BUTTON */
+.talk-btn {
+    display: inline-block;
+    background: #0A1B33;
+    color: #FFFFFF;
+    padding: 14px 35px;
+    border-radius: 50px;
+    font-size: 16px;
+    text-transform: uppercase;
+    font-weight: 500;
+    text-decoration: none;
+    border: 2px solid #0A1B33;
+    transition: 0.3s;
+}
+
+.talk-btn:hover {
+    background: transparent;
+    color: #0A1B33;
+}
+
+/* FLOATING IMAGE */
+
+.talk-img {
+    width: 100%;
+    max-width: 490px;
+    animation: floatImg 4s ease-in-out infinite;
+}
+
+@keyframes floatImg {
+    0% {
+        transform: translateY(0px);
+    }
+
+    50% {
+        transform: translateY(-12px);
+    }
+
+    100% {
+        transform: translateY(0px);
+    }
+}
+
+/* SECTION */
+.consultancy-section {
+    width: 100%;
+    background: #0A1B33;
+    /* padding-top: 100px; */
+    padding-bottom: 80px;
+}
+
+/* HEADING */
+.consultancy-heading {
+    text-align: center;
+    font-family: "Poppins", sans-serif;
+    font-size: 55px;
+    font-weight: 700;
+    color: #ffffff;
+    margin-bottom: 70px;
+    padding-top: 400px;
+}
+
+.consultancy-heading span {
+    color: #FA8120;
+}
+
+/* GRID */
+.consultancy-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 60px 40px;
+    position: relative;
+}
+
+/* VERTICAL DIVIDERS */
+.consultancy-grid::before,
+.consultancy-grid::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    width: 1px;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.2);
+}
+
+.consultancy-grid::before {
+    left: 33.33%;
+}
+
+.consultancy-grid::after {
+    left: 66.66%;
+}
+
+/* HORIZONTAL DIVIDER */
+.consultancy-grid hr {
+    width: 100%;
+    border: none;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+/* ITEM */
+/* Fade-Up Hover Effect */
+.consultancy-item {
+    text-align: center;
+    padding: 0 20px;
+    position: relative;
+    transition: transform 0.4s ease, opacity 0.4s ease;
+    opacity: 1;
+}
+
+.consultancy-item:hover {
+    transform: translateY(-10px);
+    opacity: 1;
+    filter: drop-shadow(0px 8px 18px rgba(255, 255, 255, 0.08));
+}
+
+.consultancy-icon {
+    width: 82px;
+    height: 82px;
+    margin-bottom: 25px;
+}
+
+/* TITLE */
+.consultancy-title {
+    font-family: "Poppins", sans-serif;
+    font-size: 25px;
+    font-weight: 700;
+    color: #ffffff;
+    margin-bottom: 15px;
+}
+
+/* DESCRIPTION */
+.consultancy-desc {
+    font-family: "Poppins", sans-serif;
+    font-size: 14px;
+    font-weight: 400;
+    color: #ffffff;
+    opacity: 0.9;
+    line-height: 1.6;
+    max-width: 350px;
+    margin: 0 auto;
+}
+
+/* ADD HORIZONTAL LINES UNDER FIRST ROW */
+.consultancy-item:nth-child(-n+3)::after {
+    content: "";
+    position: absolute;
+    left: 50%;
+    bottom: -30px;
+    /* adjust spacing */
+    transform: translateX(-50%);
+    width: 80%;
+    /* same length as your screenshot */
+    height: 1px;
+    background: rgba(255, 255, 255, 0.2);
+}
+
+/* SECTION */
+.about-section {
+    width: 100%;
+    background: #FFF7EC;
+    padding: 100px 0;
+}
+
+/* CONTAINER FLEX GRID */
+.about-container {
+    display: grid;
+    grid-template-columns: 1fr 1.1fr;
+    align-items: center;
+    /* gap: 60px; */
+}
+
+/* LEFT SIDE IMAGE */
+.about-image img {
+    width: 100%;
+    max-width: 520px;
+    animation: floatImg 4s ease-in-out infinite;
+}
+
+/* FLOATING EFFECT */
+@keyframes floatImg {
+    0% {
+        transform: translateY(0px);
+    }
+
+    50% {
+        transform: translateY(-15px);
+    }
+
+    100% {
+        transform: translateY(0px);
+    }
+}
+
+/* HEADING */
+.about-heading {
+    font-family: "Poppins", sans-serif;
+    font-size: 55px;
+    font-weight: 700;
+    color: #FA8120;
+    margin-bottom: 25px;
+    line-height: 1.2;
+    text-align: left;
+}
+
+.about-heading span {
+    color: #0A1B33;
+}
+
+/* DESCRIPTION */
+.about-desc {
+    font-family: "Poppins", sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    color: #626161;
+    line-height: 1.7;
+    margin-bottom: 25px;
+    max-width: 520px;
+}
+
+/* BUTTON */
+.about-btn {
+    display: inline-block;
+    background: #0A1B33;
+    color: #FFFFFF;
+    padding: 14px 38px;
+    border-radius: 50px;
+    font-size: 16px;
+    font-weight: 500;
+    text-decoration: none;
+    border: 2px solid #0A1B33;
+    transition: 0.3s;
+    text-transform: uppercase;
+}
+
+.about-btn:hover {
+    background: transparent;
+    color: #0A1B33;
+}
+
+/* SECTION */
+.magazine-section {
+    padding: 80px 0;
+}
+
+/* HEADING */
+.magazine-heading {
+    text-align: center;
+    font-family: "Poppins", sans-serif;
+    font-size: 55px;
+    font-weight: 700;
+    margin-bottom: 60px;
+    color: #0A1B33;
+}
+
+.magazine-heading span {
+    color: #FA8120;
+}
+
+/* GRID LAYOUT */
+.magazine-grid {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    column-gap: 30px;
+    align-items: center;
+    justify-content: center;
+    /* <-- IMPORTANT */
+    justify-items: center;
+    /* <-- Aligns each box inside the grid cell */
+}
+
+/* COLUMN BASE */
+.mag-col {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    align-items: center;
+}
+
+/* SQUARE BOXES */
+.mag-box {
+    width: 200px;
+    height: 190px;
+    background: #FDF6E4;
+    border-radius: 12px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
+}
+
+/* DARK MIDDLE COLUMN */
+.mag-dark-box {
+    width: 250px;
+    height: 410px;
+    background: #0A1B33;
+    border-radius: 12px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* FLOATING EFFECT */
+.mag-img {
+    width: 80%;
+    animation: floatImage 4s ease-in-out infinite;
+}
+
+.img1 {
+    width: 100%;
+}
+
+@keyframes floatImage {
+    0% {
+        transform: translateY(0px);
+    }
+
+    50% {
+        transform: translateY(-12px);
+    }
+
+    100% {
+        transform: translateY(0px);
+    }
+}
+
+/* Section Background */
+.contact-section {
+    width: 100%;
+    background: #FA8120;
+    padding-top: 80px;
+}
+
+/* Main Container Layout */
+.contact-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 40px;
+}
+
+/* LEFT SIDE */
+.contact-title {
+    font-family: 'Poppins', sans-serif;
+    font-size: 55px;
+    font-weight: 700;
+    color: #0A1B33;
+    margin-bottom: 30px;
+}
+
+.contact-title span {
+    color: #0A1B33;
+    /* Same color, design uses full dark heading */
+}
+
+/* Form Wrapper */
+.contact-form {
+    width: 100%;
+    /* max-width: 600px; */
+}
+
+/* Two-column layout rows */
+.form-row {
+    display: flex;
+    gap: 20px;
+    margin-bottom: 20px;
+}
+
+/* Inputs & Dropdown */
+.contact-input {
+    width: 100%;
+    background: #FFFFFF;
+    border: none;
+    outline: none;
+    padding: 16px 20px;
+    font-family: 'Inter', sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    color: #727171;
+    border-radius: 50px;
+    /* Pill Shape */
+}
+
+/* Dropdown arrow style */
+.select-input {
+    appearance: none;
+    background-image: url("data:image/svg+xml,%3Csvg width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%23727171' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 20px center;
+    background-size: 18px;
+    cursor: pointer;
+}
+
+/* TEXTAREA (20px radius as you requested) */
+.contact-textarea {
+    width: 100%;
+    height: 130px;
+    background: #FFFFFF;
+    border: none;
+    outline: none;
+    padding: 18px 20px;
+    font-family: 'Inter', sans-serif;
+    font-size: 16px;
+    color: #727171;
+    border-radius: 20px !important;
+    resize: none;
+    margin-bottom: 25px;
+}
+
+/* Button */
+.contact-btn {
+    width: 100%;
+    background: #0A1B33;
+    color: #FFFFFF;
+    padding: 18px 0;
+    font-family: 'Poppins', sans-serif;
+    font-size: 18px;
+    font-weight: 600;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.contact-btn:hover {
+    background: #142b4d;
+}
+
+/* RIGHT SIDE IMAGE */
+.contact-right {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    padding-top: 120px;
+}
+
+.contact-img {
+    max-width: 620px;
+    width: 100%;
+    animation: floatImg 4s ease-in-out infinite;
+}
+
+/* Floating Animation */
+@keyframes floatImg {
+    0% {
+        transform: translateY(0px);
+    }
+
+    50% {
+        transform: translateY(-12px);
+    }
+
+    100% {
+        transform: translateY(0px);
+    }
+}
+
+/* FOOTER SECTION */
+.hpc-footer {
+    width: 100%;
+    background: #0A1B33;
+    padding: 70px 0 40px;
+    font-family: 'Poppins', sans-serif;
+}
+
+/* CONTAINER */
+.footer-container {
+    width: 100%;
+    max-width: 1300px;
+    margin: auto;
+    display: grid;
+    grid-template-columns: 1.5fr 1fr 1fr;
+    /* LEFT WIDE */
+    column-gap: 80px;
+    align-items: flex-start;
+}
+
+/* LEFT COLUMN */
+.footer-logo {
+    width: 150px;
+    margin-bottom: 20px;
+}
+
+.footer-description {
+    font-size: 16px;
+    font-weight: 400;
+    color: #EEEEEEB2;
+    line-height: 1.7;
+    max-width: 450px;
+}
+
+/* MIDDLE & RIGHT HEADINGS */
+.footer-heading {
+    font-size: 24px;
+    font-weight: 700;
+    color: #FFFFFF;
+    margin-bottom: 20px;
+}
+
+/* QUICK LINKS */
+.footer-links {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-links li {
+    margin-bottom: 12px;
+}
+
+.footer-links a {
+    color: #EEEEEEB2;
+    font-size: 16px;
+    font-weight: 500;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+.footer-links a:hover {
+    color: #FFFFFF;
+}
+
+/* CONTACT ITEMS */
+.footer-contact-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    margin-bottom: 18px;
+}
+
+.footer-contact-item img {
+    width: 32px;
+}
+
+/* TEXT */
+.footer-contact-item p {
+    font-size: 16px;
+    color: #EEEEEEB2;
+    font-weight: 500;
+    line-height: 1.5;
+}
+
+/* DIVIDER */
+.footer-divider {
+    width: 100%;
+    height: 1px;
+    background: #FFFFFF20;
+    margin: 40px 0 25px;
+}
+
+/* BOTTOM FOOTER */
+.footer-bottom {
+    width: 100%;
+    max-width: 1300px;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* SOCIAL ICONS */
+.footer-social {
+    display: flex;
+    gap: 20px;
+}
+
+.social-icon {
+    width: 40px;
+    transition: transform 0.4s ease;
+}
+
+.social-icon:hover {
+    transform: scale(1.18);
+}
+
+/* COPYRIGHT */
+.footer-copy {
+    font-size: 16px;
+    color: #EEEEEEB2;
+    font-weight: 400;
+}
+
+
+/* ----------------------------------------------------
+   RESPONSIVE MEDIA QUERIES (Desktop-First: max-width)
+   Centralized and Ordered for Easy Management
+---------------------------------------------------- */
+
+/* 1. STYLES FOR SCREENS UP TO 1024px */
+/* You had no unique styles for max-width: 1024px, but it's kept for the structure. */
+@media (max-width: 1024px) {
+    /* Add any 1024px specific styles here if needed. */
+
+    .mag-box {
+        width: 150px;
+    }
+
+    .clients-logos {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px;
+    }
+
+    .footer-container {
+        padding: 30px;
+    }
+
+    .footer-bottom {
+        padding: 30px;
+    }
+}
+
+/* 2. STYLES FOR SCREENS UP TO 991px (Laptop/Tablet Landscape) */
+@media (max-width: 991px) {
+
+    /* From talk-inner-section (991px) */
+    .talk-heading {
+        font-size: 36px;
+    }
+
+    .talk-inner-container {
+        padding: 50px 40px;
+    }
+}
+
+/* 3. STYLES FOR SCREENS UP TO 992px (Tablet/Small Laptop) - Used heavily in the original CSS */
+@media (max-width: 992px) {
+
+    /* From Footer (900px in original, changed to 992px for better grouping) */
+    .footer-container {
+        /* grid-template-columns: 1fr; */
+        row-gap: 40px;
+        padding: 20px;
+    }
+
+    .footer-bottom {
+        padding: 20px;
+    }
+
+    .footer-description {
+        font-size: 12px;
+    }
+
+    .footer-links a {
+        font-size: 12px;
+    }
+
+    .footer-heading {
+        font-size: 16px;
+    }
+
+    .footer-contact-item p {
+        font-size: 12px;
+    }
+
+    .footer-copy {
+        font-size: 12px;
+    }
+
+    /* From Contact Section (992px) */
+    .contact-container {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .form-row {
+        flex-direction: column;
+    }
+
+    .contact-title {
+        text-align: center;
+    }
+
+    .contact-right {
+        margin-top: 40px;
+    }
+
+    /* From Magazine Section (992px) */
+    .magazine-grid {
+        grid-template-columns: repeat(2, 1fr);
+        row-gap: 40px;
+    }
+
+    .mag-dark-box {
+        height: 350px;
+    }
+
+    /* From About Section (992px) */
+    .about-container {
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+
+    .about-heading,
+    .about-desc,
+    .about-btn {
+        text-align: center !important;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .about-image img {
+        margin: 0 auto;
+    }
+
+    /* From Consultancy Section (992px) */
+    .consultancy-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .consultancy-grid::before,
+    .consultancy-grid::after {
+        display: none;
+    }
+
+    /* From Clients Section (992px) */
+    .client-box {
+        width: calc(33.33% - 20px);
+        height: 150px;
+    }
+}
+
+/* 4. STYLES FOR SCREENS UP TO 768px (Tablet Portrait) */
+/* Consolidation of 768px and 767px styles */
+@media (max-width: 768px) {
+
+    /* From Clients Section (768px) */
+    .client-box {
+        width: calc(50% - 20px);
+        height: 140px;
+    }
+
+    /* From Banner Section (768px) */
+    .bhv-title {
+        font-size: 60px;
+    }
+
+    .science-title {
+        font-size: 52px;
+    }
+
+    .cons-title {
+        font-size: 38px;
+    }
+
+    .sub-text {
+        font-size: 18px;
+        max-width: 100%;
+    }
+
+    .learn-btn {
+        padding: 12px 30px;
+        font-size: 14px;
+    }
+
+    /* From Testimonial Section (767px) */
+    .testimonial-section {
+        padding: 40px 0 60px;
+    }
+
+    .testimonial-heading {
+        font-size: 32px;
+        margin-bottom: 80px;
+        /* Adjusted from 120px to fit better */
+    }
+
+    .testimonial-card {
+        height: 360px;
+        padding: 20px 28px 80px 28px;
+        background-position: center top;
+        background-size: 390px;
+        /* margin-bottom: 180px; */
+        /* Adjusted from 260px to fit better */
+    }
+
+    .client-img {
+        right: 24px;
+        top: -30px;
+        width: 68px;
+        height: 68px;
+    }
+
+    .review-text {
+        font-size: 14px;
+    }
+
+    /* From Talk Inner Section (767px) */
+    .talk-heading {
+        font-size: 28px;
+    }
+
+    .talk-btn {
+        display: block;
+        margin: 0 auto;
+        margin-top: 20px;
+        text-align: center;
+    }
+
+    .talk-img {
+        /* max-width: 280px; */
+        margin-top: 30px;
+    }
+
+    .talk-inner-container {
+        padding: 40px 25px;
+    }
+
+    .consultancy-heading {
+        padding-top: 300px;
+    }
+}
+
+
+/* 5. STYLES FOR SCREENS UP TO 480px (Mobile Devices) */
+@media (max-width: 480px) {
+
+    .bhv-title {
+        font-size: 50px;
+    }
+
+    .science-title {
+        font-size: 52px;
+    }
+
+    .sub-text {
+        font-size: 14px;
+    }
+
+    .clients-heading {
+        font-size: 40px;
+    }
+
+    .clients-section {
+        padding-top: 80px;
+        padding-bottom: 80px;
+    }
+
+    .testimonial-card {
+        position: relative;
+        background-image: url('./images/Mask\ group\ \(22\).png');
+        /* background-size: contain; */
+        background-position: center;
+        background-repeat: no-repeat;
+        padding: 20px 45px 50px;
+        /* margin-bottom: 260px; */
+        border-radius: 8px;
+
+    }
+
+    .content-wrapper {
+        margin-top: 30px;
+        padding-bottom: 15px;
+    }
+
+    .quote-icon {
+        position: absolute;
+        top: -3px;
+        left: 35px;
+        width: 65px;
+    }
+
+    .client-img {
+        right: 24px;
+        top: -5px;
+        width: 68px;
+        height: 68px;
+    }
+
+    .consultancy-section {
+        padding-top: 100px;
+        padding-bottom: 160px;
+    }
+
+    .consultancy-heading {
+        font-size: 40px;
+        padding-top: 380px;
+    }
+
+    .mag-box {
+        width: 300px;
+    }
+
+    .mag-dark-box {
+        width: 320px;
+        height: 410px;
+    }
+
+    .about-heading,
+    .about-desc {
+        text-align: left;
+    }
+
+    .contact-title {
+        font-size: 40px;
+    }
+
+    .contact-img {
+        max-width: 420px;
+    }
+
+    .contact-right {
+        margin-top: 10px;
+        padding-top: 10px;
+    }
+
+    .hpc-footer {
+        width: 100%;
+        background: #0A1B33;
+        /* padding: 70px 30px 40px 30px; */
+        font-family: 'Poppins', sans-serif;
+    }
+
+    .footer-bottom {
+        display: block;
+        text-align: center;
+    }
+
+    .footer-social {
+        justify-content: center;
+    }
+
+    .footer-container {
+        grid-template-columns: 1fr;
+        row-gap: 40px;
+    }
+
+    /* From Clients Section (480px) */
+    .client-box {
+        width: 100%;
+        height: 130px;
+    }
+}
+
+
+/* 6. ADDITIONAL MOBILE STYLES (FROM ORIGINAL FILE - MAX-WIDTH: 600px/576px) */
+
+@media (max-width: 600px) {
+
+    /* From Magazine Section (600px) */
+    .magazine-heading {
+        font-size: 38px;
+    }
+
+    .magazine-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .mag-box,
+    .mag-dark-box {
+        /* width: 100%; */
+        /* Make boxes full width */
+        height: auto;
+        padding: 40px;
+    }
+
+    .mag-img {
+        width: 60%;
+    }
+
+    .testimonial-card {
+        width: 100%;
+    }
+
+}
+
+@media (max-width: 576px) {
+
+    /* From Consultancy Section (576px) */
+    .consultancy-grid {
+        grid-template-columns: 1fr;
+    }
+}
